@@ -257,7 +257,25 @@ namespace Wav2Amiga
         {
             var selectedNote = (PTNote)cbxNote.SelectedItem;
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            var newList = new List<string>();
+            foreach (var file in files)
+            {
+                var attr = File.GetAttributes(file);
+
+                if (attr.HasFlag(FileAttributes.Directory))
+                {
+                    newList.AddRange(Directory.GetFiles(file, "*.wav", SearchOption.AllDirectories));
+                }
+                else
+                {
+                    newList.Add(file);
+                }
+            }
+
+            files = newList.ToArray();
             Array.Sort(files);
+
             foreach (var file in files)
             {
                 var ext = Path.GetExtension(file);
