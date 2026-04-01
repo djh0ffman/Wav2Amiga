@@ -10,3 +10,6 @@ Modes
 * Stacked - converts all samples into a single sample, aligning to ProTrackers sample offset boudary
 * StackedEqual - same as above, but takes the largest spacing and makes all samples equal distance
 
+Note: when using stacked, the file suggestion will contain the sample offset values.
+
+
