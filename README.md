@@ -7,6 +7,6 @@ Drag and drop, hit convert, done.
 Modes
 
 * Single - converts each sample individually
-* Stacked - converts all samples into a sample, aligning to ProTrackers sample offset boudary
+* Stacked - converts all samples into a single sample, aligning to ProTrackers sample offset boudary
 * StackedEqual - same as above, but takes the largest spacing and makes all samples equal distance
 
